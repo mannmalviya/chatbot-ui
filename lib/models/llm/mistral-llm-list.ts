@@ -62,9 +62,4 @@ const MISTRAL_LARGE: LLM = {
   }
 }
 
-export const MISTRAL_LLM_LIST: LLM[] = [
-  MISTRAL_7B,
-  MIXTRAL,
-  MISTRAL_MEDIUM,
-  MISTRAL_LARGE
-]
+export const MISTRAL_LLM_LIST: LLM[] = []

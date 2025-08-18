@@ -24,7 +24,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
   const {
     profile,
     models,
-    availableHostedModels,
+    // availableHostedModels,
     availableLocalModels,
     availableOpenRouterModels
   } = useContext(ChatbotUIContext)
@@ -57,7 +57,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
       platformLink: "",
       imageInput: false
     })),
-    ...availableHostedModels,
+    // ...availableHostedModels,
     ...availableLocalModels,
     ...availableOpenRouterModels
   ]
@@ -94,9 +94,7 @@ export const ModelSelect: FC<ModelSelectProps> = ({
         disabled={allModels.length === 0}
       >
         {allModels.length === 0 ? (
-          <div className="rounded text-sm font-bold">
-            Unlock models by entering API keys in your profile settings.
-          </div>
+          <div className="rounded text-sm font-bold">LLMs Server is Down</div>
         ) : (
           <Button
             ref={triggerRef}

@@ -62,9 +62,4 @@ const GEMMA_7B_IT: LLM = {
   }
 }
 
-export const GROQ_LLM_LIST: LLM[] = [
-  LLaMA3_8B,
-  LLaMA3_70B,
-  MIXTRAL_8X7B,
-  GEMMA_7B_IT
-]
+export const GROQ_LLM_LIST: LLM[] = []
