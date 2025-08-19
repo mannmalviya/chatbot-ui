@@ -1,12 +1,21 @@
 import { ModelProvider } from "."
 
+// Ollama(local) models
+export type OllamaLLMID =
+  | "deepseek-r1:14b"
+  | "deepseek-r1:32b"
+  | "phi4:latest"
+  | "gemma3:12b"
+// Add other Ollama models here as needed
+
 export type LLMID =
-  | OpenAILLMID
-  | GoogleLLMID
-  | AnthropicLLMID
-  | MistralLLMID
-  | GroqLLMID
-  | PerplexityLLMID
+  //  | OpenAILLMID
+  //  | GoogleLLMID
+  //  | AnthropicLLMID
+  //  | MistralLLMID
+  //  | GroqLLMID
+  //  | PerplexityLLMID
+  OllamaLLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =

@@ -54,14 +54,6 @@ export const fetchOllamaModels = async () => {
     const data = await response.json()
     console.log("!!!!!!!DATA", data)
 
-    // // My list of allowed models
-    // const allowedModels: LLM[] = [
-    //   "gemma3:12b",
-    //   "deepseek-r1:32b",
-    //   "deepseek-r1:14b",
-    //   // Add other model IDs you want to allow
-    // ];
-
     const allowedModels = [
       "deepseek-r1:32b",
       "deepseek-r1:14b",
