@@ -11,12 +11,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
 interface ChatSettingsProps {}
 
 export const ChatSettings: FC<ChatSettingsProps> = ({}) => {
-  useEffect(() => {
-    // Code to run after every render (including the first one)
-    // This is where side effects are performed, e.g., data fetching, DOM manipulation, subscriptions.
-    console.log(process.env)
-  })
-
   useHotkey("i", () => handleClick())
 
   const {
