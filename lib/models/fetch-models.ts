@@ -54,14 +54,31 @@ export const fetchOllamaModels = async () => {
     const data = await response.json()
     console.log("!!!!!!!DATA", data)
 
-    const localModels: LLM[] = data.models.map((model: any) => ({
-      modelId: model.name as LLMID,
-      modelName: model.name,
-      provider: "ollama",
-      hostedId: model.name,
-      platformLink: "https://ollama.ai/library",
-      imageInput: false
-    }))
+    // // My list of allowed models
+    // const allowedModels: LLM[] = [
+    //   "gemma3:12b",
+    //   "deepseek-r1:32b",
+    //   "deepseek-r1:14b",
+    //   // Add other model IDs you want to allow
+    // ];
+
+    const allowedModels = [
+      "deepseek-r1:32b",
+      "deepseek-r1:14b",
+      "phi4:latest",
+      "gemma3:12b"
+    ]
+
+    const localModels: LLM[] = data.models
+      .filter((model: any) => allowedModels.includes(model.name))
+      .map((model: any) => ({
+        modelId: model.name as LLMID,
+        modelName: model.name,
+        provider: "ollama",
+        hostedId: model.name,
+        platformLink: "https://ollama.ai/library",
+        imageInput: false
+      }))
 
     return localModels
   } catch (error) {

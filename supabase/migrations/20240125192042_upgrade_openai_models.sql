@@ -93,11 +93,11 @@ BEGIN
         TRUE,
         'Home',
         4096,
-        'gpt-4-turbo-preview', -- Updated default model
-        'You are a friendly, helpful AI assistant.',
+        'deepseek-r1:14b', -- Updated default model
+        '',
         0.5,
         'My home workspace.',
-        'openai',
+        '',
         TRUE,
         TRUE,
         ''
