@@ -30,8 +30,8 @@ interface ChatSettingsFormProps {
 export const ChatSettingsForm: FC<ChatSettingsFormProps> = ({
   chatSettings,
   onChangeChatSettings,
-  useAdvancedDropdown = true,
-  showTooltip = true
+  useAdvancedDropdown = false,
+  showTooltip = false
 }) => {
   const { profile, models } = useContext(ChatbotUIContext)
 
@@ -49,7 +49,7 @@ export const ChatSettingsForm: FC<ChatSettingsFormProps> = ({
           }}
         />
       </div>
-
+      {/*
       <div className="space-y-1">
         <Label>Prompt</Label>
 
@@ -64,8 +64,8 @@ export const ChatSettingsForm: FC<ChatSettingsFormProps> = ({
           maxRows={6}
         />
       </div>
-
-      {useAdvancedDropdown ? (
+*/}
+      {/*  {useAdvancedDropdown ? (
         <AdvancedSettings>
           <AdvancedContent
             chatSettings={chatSettings}
@@ -82,6 +82,7 @@ export const ChatSettingsForm: FC<ChatSettingsFormProps> = ({
           />
         </div>
       )}
+    */}
     </div>
   )
 }

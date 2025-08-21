@@ -3,6 +3,8 @@ import { ChatPayload, MessageImage } from "@/types"
 import { encode } from "gpt-tokenizer"
 import { getBase64FromDataURL, getMediaTypeFromDataURL } from "@/lib/utils"
 
+import { SYSTEM_PROMPT } from "@/lib/constants"
+
 const buildBasePrompt = (
   prompt: string,
   profileContext: string,
@@ -45,7 +47,8 @@ export async function buildFinalMessages(
   } = payload
 
   const BUILT_PROMPT = buildBasePrompt(
-    chatSettings.prompt,
+    // chatSettings.prompt,
+    SYSTEM_PROMPT,
     chatSettings.includeProfileContext ? profile.profile_context || "" : "",
     chatSettings.includeWorkspaceInstructions ? workspaceInstructions : "",
     assistant

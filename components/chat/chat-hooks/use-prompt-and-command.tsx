@@ -7,6 +7,8 @@ import { Tables } from "@/supabase/types"
 import { LLMID } from "@/types"
 import { useContext } from "react"
 
+import { SYSTEM_PROMPT } from "@/lib/constants"
+
 export const usePromptAndCommand = () => {
   const {
     chatFiles,
@@ -141,7 +143,7 @@ export const usePromptAndCommand = () => {
 
     setChatSettings({
       model: assistant.model as LLMID,
-      prompt: assistant.prompt,
+      prompt: SYSTEM_PROMPT,
       temperature: assistant.temperature,
       contextLength: assistant.context_length,
       includeProfileContext: assistant.include_profile_context,

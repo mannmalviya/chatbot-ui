@@ -28,6 +28,8 @@ import { VALID_ENV_KEYS } from "@/types/valid-keys"
 import { useRouter } from "next/navigation"
 import { FC, useEffect, useState } from "react"
 
+import { SYSTEM_PROMPT } from "@/lib/constants"
+
 interface GlobalStateProps {
   children: React.ReactNode
 }
@@ -78,7 +80,7 @@ export const GlobalState: FC<GlobalStateProps> = ({ children }) => {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
   const [chatSettings, setChatSettings] = useState<ChatSettings>({
     model: "deepseek-r1:14b",
-    prompt: "You are a helpful AI assistant.",
+    prompt: SYSTEM_PROMPT,
     temperature: 0.5,
     contextLength: 4000,
     includeProfileContext: true,

@@ -28,6 +28,8 @@ import { TextareaAutosize } from "../ui/textarea-autosize"
 import { WithTooltip } from "../ui/with-tooltip"
 import { DeleteWorkspace } from "./delete-workspace"
 
+import { SYSTEM_PROMPT } from "@/lib/constants"
+
 interface WorkspaceSettingsProps {}
 
 export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
@@ -57,7 +59,7 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
 
   const [defaultChatSettings, setDefaultChatSettings] = useState({
     model: selectedWorkspace?.default_model,
-    prompt: selectedWorkspace?.default_prompt,
+    prompt: SYSTEM_PROMPT,
     temperature: selectedWorkspace?.default_temperature,
     contextLength: selectedWorkspace?.default_context_length,
     includeProfileContext: selectedWorkspace?.include_profile_context,
@@ -109,7 +111,7 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
       image_path: imagePath,
       instructions,
       default_model: defaultChatSettings.model,
-      default_prompt: defaultChatSettings.prompt,
+      default_prompt: SYSTEM_PROMPT,
       default_temperature: defaultChatSettings.temperature,
       default_context_length: defaultChatSettings.contextLength,
       embeddings_provider: defaultChatSettings.embeddingsProvider,
@@ -129,7 +131,7 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
     ) {
       setChatSettings({
         model: defaultChatSettings.model as LLMID,
-        prompt: defaultChatSettings.prompt,
+        prompt: SYSTEM_PROMPT,
         temperature: defaultChatSettings.temperature,
         contextLength: defaultChatSettings.contextLength,
         includeProfileContext: defaultChatSettings.includeProfileContext,

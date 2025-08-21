@@ -22,6 +22,8 @@ import { Input } from "../ui/input"
 import { QuickSettingOption } from "./quick-setting-option"
 import { set } from "date-fns"
 
+import { SYSTEM_PROMPT } from "@/lib/constants"
+
 interface QuickSettingsProps {}
 
 export const QuickSettings: FC<QuickSettingsProps> = ({}) => {
@@ -107,7 +109,7 @@ export const QuickSettings: FC<QuickSettingsProps> = ({}) => {
       if (selectedWorkspace) {
         setChatSettings({
           model: selectedWorkspace.default_model as LLMID,
-          prompt: selectedWorkspace.default_prompt,
+          prompt: SYSTEM_PROMPT,
           temperature: selectedWorkspace.default_temperature,
           contextLength: selectedWorkspace.default_context_length,
           includeProfileContext: selectedWorkspace.include_profile_context,
@@ -123,7 +125,7 @@ export const QuickSettings: FC<QuickSettingsProps> = ({}) => {
 
     setChatSettings({
       model: item.model as LLMID,
-      prompt: item.prompt,
+      prompt: SYSTEM_PROMPT,
       temperature: item.temperature,
       contextLength: item.context_length,
       includeProfileContext: item.include_profile_context,
