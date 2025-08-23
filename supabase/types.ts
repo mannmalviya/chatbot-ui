@@ -984,7 +984,7 @@ export type Database = {
           openai_organization_id: string | null
           openrouter_api_key: string | null
           perplexity_api_key: string | null
-          profile_context: string
+//          profile_context: string
           updated_at: string | null
           use_azure_openai: boolean
           user_id: string
@@ -1012,7 +1012,7 @@ export type Database = {
           openai_organization_id?: string | null
           openrouter_api_key?: string | null
           perplexity_api_key?: string | null
-          profile_context: string
+//          profile_context: string
           updated_at?: string | null
           use_azure_openai: boolean
           user_id: string

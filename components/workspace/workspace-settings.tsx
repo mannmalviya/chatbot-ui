@@ -53,9 +53,9 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
   const [description, setDescription] = useState(
     selectedWorkspace?.description || ""
   )
-  const [instructions, setInstructions] = useState(
-    selectedWorkspace?.instructions || ""
-  )
+  //  const [instructions, setInstructions] = useState(
+  //    selectedWorkspace?.instructions || ""
+  //  )
 
   const [defaultChatSettings, setDefaultChatSettings] = useState({
     model: selectedWorkspace?.default_model,
@@ -109,7 +109,7 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
       name,
       description,
       image_path: imagePath,
-      instructions,
+      //      instructions,
       default_model: defaultChatSettings.model,
       default_prompt: SYSTEM_PROMPT,
       default_temperature: defaultChatSettings.temperature,
@@ -242,7 +242,7 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
                 </div>
               </>
 
-              <div className="space-y-1">
+              {/*              <div className="space-y-1">
                 <Label>
                   How would you like the AI to respond in this workspace?
                 </Label>
@@ -260,7 +260,8 @@ export const WorkspaceSettings: FC<WorkspaceSettingsProps> = ({}) => {
                   used={instructions.length}
                   limit={WORKSPACE_INSTRUCTIONS_MAX}
                 />
-              </div>
+              </div> 
+*/}
             </TabsContent>
 
             <TabsContent className="mt-5" value="defaults">

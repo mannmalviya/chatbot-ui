@@ -148,7 +148,7 @@ export const Message: FC<MessageProps> = ({
     image => image.path === selectedAssistant?.image_path
   )?.base64
 
-  const modelDetails = LLM_LIST.find(model => model.modelId === message.model)
+  const modelDetails = MODEL_DATA
 
   const fileAccumulator: Record<
     string,
@@ -232,6 +232,7 @@ export const Message: FC<MessageProps> = ({
                     trigger={
                       <ModelIcon
                         provider={modelDetails?.provider || "custom"}
+                        modelId={message.model}
                         height={ICON_SIZE}
                         width={ICON_SIZE}
                       />

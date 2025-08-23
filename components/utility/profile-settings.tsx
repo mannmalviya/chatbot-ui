@@ -69,9 +69,9 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
     profile?.image_url || ""
   )
   const [profileImageFile, setProfileImageFile] = useState<File | null>(null)
-  const [profileInstructions, setProfileInstructions] = useState(
-    profile?.profile_context || ""
-  )
+  //  const [profileInstructions, setProfileInstructions] = useState(
+  //    profile?.profile_context || ""
+  //  )
 
   const [useAzureOpenai, setUseAzureOpenai] = useState(
     profile?.use_azure_openai
@@ -140,7 +140,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
       ...profile,
       display_name: displayName,
       username,
-      profile_context: profileInstructions,
+      //      profile_context: profileInstructions,
       image_url: profileImageUrl,
       image_path: profileImagePath,
       openai_api_key: openaiAPIKey,
@@ -334,10 +334,13 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
           </SheetHeader>
 
           <Tabs defaultValue="profile">
-            <TabsList className="mt-4 grid w-full grid-cols-2">
+            {/*            <TabsList className="mt-4 grid w-full grid-cols-2">
               <TabsTrigger value="profile">Profile</TabsTrigger>
               <TabsTrigger value="keys">API Keys</TabsTrigger>
-            </TabsList>
+            </TabsList> */}
+            <div className="mt-4 w-full text-center text-lg font-medium">
+              Profile
+            </div>
 
             <TabsContent className="mt-4 space-y-4" value="profile">
               <div className="space-y-1">
@@ -411,7 +414,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                 />
               </div>
 
-              <div className="space-y-1">
+              {/*              <div className="space-y-1">
                 <Label className="text-sm">
                   What would you like the AI to know about you to provide better
                   responses?
@@ -430,9 +433,10 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                   limit={PROFILE_CONTEXT_MAX}
                 />
               </div>
+*/}
             </TabsContent>
 
-            <TabsContent className="mt-4 space-y-4" value="keys">
+            {/*            <TabsContent className="mt-4 space-y-4" value="keys">
               <div className="mt-5 space-y-2">
                 <Label className="flex items-center">
                   {useAzureOpenai
@@ -723,7 +727,7 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
                   </>
                 )}
               </div>
-            </TabsContent>
+            </TabsContent> */}
           </Tabs>
         </div>
 
